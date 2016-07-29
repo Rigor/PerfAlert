@@ -1,0 +1,35 @@
+{
+  "name": "PerfAlert",
+  "description": "A web service to trigger and compare Optimization snapshots after a successful Semaphore deploy",
+  "keywords": [
+    "semaphore",
+    "optimization",
+    "rigor",
+    "webhook",
+    "web performance",
+    "monitoring",
+    "performance"
+  ],
+  "website": "https://github.com/Rigor/PerfAlert",
+  "repository": "https://github.com/Rigor/PerfAlert",
+  "env": {
+    "OPTIMIZATION_API_KEY": {
+      "description": "API key for your Rigor Optimization account",
+      "value": "optimization_api_key"
+    },
+    "OPTIMIZATION_TEST_ID": {
+      "description": "ID of the Rigor Optimization test to trigger snapshots for",
+      "value": "optimization_test_id"
+    },
+    "SLACK_WEBHOOK_URL": {
+      "description": "Slack webhook URL to notify when a snapshot is triggered",
+      "value": "http://your.slack.webhook"
+    },
+    "SEMAPHORE_SERVER_REGEX": {
+      "description": "Optional regular expression used to match the deployed server from Semaphore"
+    }
+  },
+  "addons": [
+    "heroku-redis:hobby-dev"
+  ]
+}

@@ -1,24 +1,49 @@
-# README
+# PerfAlert
+_A tool to receive Rigor Optimization alerts for every build of your website_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PerfAlert is a free and open-source tool that can alert you if a specific build of your website increases or decreases
+the total number of defects it has by leveraging Rigor Optimization scans.
 
-Things you may want to cover:
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-* Ruby version
+## Setup
 
-* System dependencies
+* Deploy the app to Heroku with the deploy button above or the host of your choice.
+* Set the environment variables:
+```
+# API key for your Rigor Optimization account
+OPTIMIZATION_API_KEY
 
-* Configuration
+# ID of the Rigor Optimization test to trigger snapshots for
+OPTIMIZATION_TEST_ID
 
-* Database creation
+# Slack webhook URL to notify when a snapshot is triggered
+SLACK_WEBHOOK_URL
+```
+* Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://your-app.herokuapp.com)
 
-* Database initialization
+## Dependencies
 
-* How to run the test suite
+PerfAlert runs on Ruby version `2.3.1` and Rails version `5.0.0`.
 
-* Services (job queues, cache servers, search engines, etc.)
+It uses PostgreSQL version `9.5.2` as its DBMS.
 
-* Deployment instructions
+Sidekiq version `4.1.2` is used for jobs queing.
 
-* ...
+## Configuration
+
+### Heroku
+
+To change your heroku deployment configuration, edit the `app.json` file in the root directory. More information on how
+to use this file can be found [here](https://devcenter.heroku.com/articles/app-json-schema).
+
+### CI
+
+Right now, PerfAlert only supports webhooks sent from Semaphore CI. We plan to add support for more CI webhooks.
+
+### Notifications
+
+Right now, PerfAlert only supports Slack notifications. We plan to add support for more messaging services.
+
+If you wish to change what information is sent to Slack or how it is presented, you will need to change the `slack_worker.rb`
+file located in the `app/workers` directory. More information on how to configure the payload sent to Slack can be found [here](https://api.slack.com/incoming-webhooks).
