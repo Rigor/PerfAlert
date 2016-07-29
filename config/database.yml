@@ -7,14 +7,14 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: optimization_connector_dev
+  database: perf_alert_dev
   host: localhost
   port: 5432
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: optimization_connector_test
+  database: perf_alert_test
   host: localhost
   port: 5432
 

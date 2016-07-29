@@ -1,7 +1,7 @@
 # PerfAlert
 _A tool to receive Rigor Optimization alerts for every build of your website_
 
-[![Code Climate](https://codeclimate.com/github/Rigor/PerfAlert/badges/gpa.svg)](https://codeclimate.com/github/Rigor/PerfAlert)
+[![Code Climate](https://codeclimate.com/github/Rigor/PerfAlert/badges/gpa.svg)](https://codeclimate.com/github/Rigor/PerfAlert) [![Build Status](https://travis-ci.org/Rigor/PerfAlert.svg?branch=master)](https://travis-ci.org/Rigor/PerfAlert)
 
 PerfAlert is a free and open-source tool that can alert you if a specific build of your website increases or decreases
 the total number of defects it has by leveraging Rigor Optimization scans.
