@@ -20,6 +20,7 @@
 require_relative '../config/environment'
 require 'sidekiq/testing'
 
+# This tells Sidekiq to put jobs into an array for inspection during testing rather than a queue
 Sidekiq::Testing.fake!
 
 RSpec.configure do |config|
