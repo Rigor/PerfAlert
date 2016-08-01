@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  new_optimization_score: 1
-  old_optimization_score: 1
-
-two:
-  new_optimization_score: 1
-  old_optimization_score: 1
