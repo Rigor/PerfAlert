@@ -6,7 +6,7 @@ class OptimizationWorker
   # no retries to avoid creating more snapshots on failure
   sidekiq_options :retry => false
 
-  OPTIMIZATION_TEST_ID = ENV['OPTIMIZATION_TEST_ID']
+  OPTIMIZATION_TEST_ID = ENV['OPTIMIZATION_TEST_ID'].freeze
 
   def perform commit_info
     client = SwaggerClient::SnapshotsApi.new(SwaggerClient::ApiClient.new)
