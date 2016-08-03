@@ -1,6 +1,6 @@
 class ScanValidator < ActiveModel::Validator
   def validate record
-    if record.event != 'build'
+    if record.event != 'deploy'
       record.errors[:event] << "Unsupported webhook event: #{record.event}"
     end
 

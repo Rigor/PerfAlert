@@ -3,6 +3,6 @@ class Scan < ApplicationRecord
   after_save :perform
 
   def perform
-    ZoompfWorker.perform_async(commit)
+    OptimizationWorker.perform_async(commit)
   end
 end
