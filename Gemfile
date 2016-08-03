@@ -23,11 +23,14 @@ gem 'active_model_serializers'
 gem 'sidekiq'
 gem 'slack-notifier'
 gem 'swagger_client', path: 'vendor/zoompf'
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
