@@ -39,9 +39,13 @@ Sidekiq version `4.1.2` is used for jobs queing.
 To change your heroku deployment configuration, edit the `app.json` file in the root directory. More information on how
 to use this file can be found [here](https://devcenter.heroku.com/articles/app-json-schema).
 
-You'll need to install the Heroku Redis add on in order for Sidekiq to be able to enqueue jobs.
-Once Redis is instaled, set the `REDIS_PROVIDER` env variable with `heroku config:set REDIS_PROVIDER=REDISTOGO_URL`.
+You'll need to install the Heroku Redis add-on in order for Sidekiq to be able to enqueue jobs.
+You will also need to install the Heroku Postgres add-on.
 
+Once you have them installed, run `heroku pg:reset DATABASE_URL`. `DATABASE_URL` will have already been configured for you with the
+installation of the Heroku Postgres add-on. Once the database is reset, you can run migrations using `heroku run rails db:migrate`.
+
+And now you're all set!
 ### CI
 
 Right now, PerfAlert only supports webhooks sent from Semaphore CI. We plan to add support for more CI webhooks.
