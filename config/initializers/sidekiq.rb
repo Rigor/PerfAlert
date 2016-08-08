@@ -5,5 +5,5 @@ Sidekiq.configure_client do |c|
 end
 
 Sidekiq.configure_server do |c|
-  c.redis = { size: 2 }
+  c.redis = { size: 4 }
 end
