@@ -40,7 +40,7 @@ class OptimizationWorker
     old_snapshot     = snapshots.first
     old_defect_count = old_snapshot.defect_count_total_1pc + old_snapshot.defect_count_total_3pc
 
-    comparison_url   = zoompf_compare_url(old_snapshot.snapshot_id, new_snapshot.snapshot_id)
+    comparison_url   = optimization_compare_url(old_snapshot.snapshot_id, new_snapshot.snapshot_id)
 
     defect_count_result, color = if new_defect_count > old_defect_count
       ["Total defect count increased from #{old_defect_count} to #{new_defect_count}", '#C0392B']
