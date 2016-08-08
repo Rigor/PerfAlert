@@ -45,7 +45,7 @@ You will also need to install the Heroku Postgres add-on.
 Once you have them installed, run `heroku pg:reset DATABASE_URL`. `DATABASE_URL` will have already been configured for you with the
 installation of the Heroku Postgres add-on. Once the database is reset, you can run migrations using `heroku run rails db:migrate`.
 
-And now you're all set!
+All that's left is to restart the app with `heroku restart -a app_name`, and you're all set!
 ### CI
 
 Right now, PerfAlert only supports webhooks sent from Semaphore CI. We plan to add support for more CI webhooks.
