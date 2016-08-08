@@ -25,7 +25,7 @@ module SwaggerClient
       @default_headers = {
         'Content-Type' => "application/#{@format.downcase}",
         'User-Agent'   => @user_agent,
-        'API-KEY'      => ENV['ZOOMPF_API_KEY']
+        'API-KEY'      => ENV['OPTIMIZATION_API_KEY']
       }
     end
 
