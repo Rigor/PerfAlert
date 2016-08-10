@@ -37,7 +37,7 @@ class OptimizationWorker
     snapshots        = client.v2_snapshots_get(OPTIMIZATION_TEST_ID, p_order_by: 'ScanAddedUTC', p_per_page: 2).snapshots
     new_snapshot     = snapshots.first
     new_defect_count = new_snapshot.defect_count_total_1pc + new_snapshot.defect_count_total_3pc
-    old_snapshot     = snapshots.first
+    old_snapshot     = snapshots.last
     old_defect_count = old_snapshot.defect_count_total_1pc + old_snapshot.defect_count_total_3pc
 
     comparison_url   = optimization_compare_url(old_snapshot.snapshot_id, new_snapshot.snapshot_id)
