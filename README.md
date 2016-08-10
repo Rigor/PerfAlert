@@ -13,6 +13,12 @@ the total number of defects it has by leveraging Rigor Optimization scans.
 * Deploy the app to Heroku with the deploy button above or the host of your choice.
 * Set the environment variables:
 ```
+# Username you want for authentication
+PERFUSER
+
+# Password you want for authentication
+PERFPASS
+
 # API key for your Rigor Optimization account
 OPTIMIZATION_API_KEY
 
@@ -22,7 +28,7 @@ OPTIMIZATION_TEST_ID
 # Slack webhook URL to notify when a snapshot is triggered
 SLACK_WEBHOOK_URL
 ```
-* Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://your-app.herokuapp.com)
+* Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://PERFUSER:PERFPASS@your-app.herokuapp.com)
 
 ## Dependencies
 
