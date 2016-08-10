@@ -25,6 +25,8 @@ Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 # disallow HTTP requests to hit enpoints. Stub them with Webmock
 WebMock.disable_net_connect!(allow_localhost: true)
 
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
+
 # This tells Sidekiq to put jobs into an array for inspection during testing rather than a queue
 Sidekiq::Testing.fake!
 
@@ -63,6 +65,11 @@ RSpec.configure do |config|
   config.before(:each) do
     Sidekiq::Worker.clear_all
   end
+
+  # include authentication helpers for request specs
+  config.include AuthHelper, type: :request
+  # include Rack::Test::Methods for simplifying request specs
+  config.include RequestHelper, type: :request
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
