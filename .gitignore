@@ -22,3 +22,4 @@
 
 # rspec stuff
 .rspec
+.idea/
