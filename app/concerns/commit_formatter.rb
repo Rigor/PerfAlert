@@ -1,7 +1,6 @@
 module CommitFormatter
   def format_commit(commit)
-    commit['id'] = format_commit_id commit['id']
-    commit
+    commit.tap { |c| c['id'] = format_commit_id(c['id']) if c }
   end
 
   def format_commit_id(id)
