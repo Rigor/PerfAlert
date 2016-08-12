@@ -21,6 +21,12 @@ OPTIMIZATION_TEST_ID
 
 # Slack webhook URL to notify when a snapshot is triggered
 SLACK_WEBHOOK_URL
+
+# Your HipChat Room ID
+HIPCHAT_ROOM_ID
+
+# Your HipChat API key
+HIPCHAT_API_KEY
 ```
 * Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://your-app.herokuapp.com)
 
@@ -52,7 +58,10 @@ Right now, PerfAlert only supports webhooks sent from Semaphore CI. We plan to a
 
 ### Notifications
 
-Right now, PerfAlert only supports Slack notifications. We plan to add support for more messaging services.
+Right now, PerfAlert only supports Slack and HipChat notifications. We plan to add support for more messaging services.
 
 If you wish to change what information is sent to Slack or how it is presented, you will need to change the `slack_worker.rb`
 file located in the `app/workers` directory. More information on how to configure the payload sent to Slack can be found [here](https://api.slack.com/incoming-webhooks).
+
+Similarly, you can change how your HipChat notification looks by editing the `hip_chat_worker.rb` file located in the `app/workers` directory. Please refer to the
+[HipChat API docs](https://www.hipchat.com/docs/apiv2/method/send_room_notification) for more information.
