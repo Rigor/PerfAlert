@@ -1,10 +1,10 @@
 class SlackNotifier
-  ATTRIBUTES = %I(commit_info score_result color comparison_url)
+  ATTRIBUTES = %I(commit score_result color comparison_url)
 
   attr_reader(*ATTRIBUTES)
 
   DEFAULTS = {
-    commit_info: {
+    commit: {
       'id' => 'No commit ID given',
       'url' => 'https://github.com/Rigor/PerfAlert/blob/master/README.md',
       'author_name' => 'No author given'
@@ -37,12 +37,12 @@ class SlackNotifier
       fields: [
         {
           title: 'Commit',
-          value: "<#{commit_info['url']} | #{commit_info['id'][0..6]}>",
+          value: "<#{commit['url']} | #{commit['id']}>",
           short: true
         },
         {
           title: 'Author',
-          value: commit_info['author_name'],
+          value: commit['author_name'],
           short: true
         }
       ],
