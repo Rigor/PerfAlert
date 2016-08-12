@@ -1,4 +1,5 @@
 class ScansController < ApplicationController
+  http_basic_authenticate_with name: ENV['PERFUSER'], password: ENV['PERFPASS']
   before_action :set_scan, only: [:show, :update, :destroy]
 
   # GET /scans
