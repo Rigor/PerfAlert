@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe HipChatNotifier do
   describe '#send' do
-    let(:messenger) { HipChatNotifier.new(NotifierPayloads::HIPCHAT) }
+    let(:messenger) { HipChatNotifier.new(SpecPayloads::HIPCHAT) }
 
     it 'successfully POSTs to HipChat', :vcr do
       response = messenger.send

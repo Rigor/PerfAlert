@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ScansController do
   describe 'POST', type: :request do
-    let(:payload) {{ 'result': 'passed', 'event': 'deploy', 'commit': { } }}
+    let(:payload) {SpecPayloads::BASE}
 
     context 'without credentials' do
       it 'does not authenticate' do

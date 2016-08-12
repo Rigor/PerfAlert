@@ -38,7 +38,7 @@ HIPCHAT_API_KEY
 
 ## Dependencies
 
-PerfAlert runs on Ruby version `2.3.1` and Rails version `5.0.0`.
+PerfAlert runs on Ruby version `2.3.1` and Rails version `5.0.0.1`.
 
 It uses PostgreSQL version `9.5.2` as its DBMS.
 

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SlackNotifier do
   describe '#send' do
-    let(:messenger) { SlackNotifier.new(NotifierPayloads::SLACK) }
+    let(:messenger) { SlackNotifier.new(SpecPayloads::SLACK) }
 
     it 'successfully POSTs to Slack', :vcr do
       response = messenger.send
