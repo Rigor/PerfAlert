@@ -19,6 +19,11 @@
 
 require_relative '../config/environment'
 require 'sidekiq/testing'
+require 'webmock/rspec'
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
+
+# disallow HTTP requests to hit enpoints. Stub them with Webmock
+WebMock.disable_net_connect!(allow_localhost: true)
 
 # This tells Sidekiq to put jobs into an array for inspection during testing rather than a queue
 Sidekiq::Testing.fake!

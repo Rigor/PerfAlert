@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.hipchat.com/v2/room/2984707/notification?auth_token=UXKQxzkCMq3Ngv3AjeOIMY94ljzgGzbpqf1eyFoq
+    body:
+      encoding: UTF-8
+      string: '{"message":"Total defect count remained the same","card":{"style":"application","format":"compact","url":"https://optimization.rigor.com/c/224148/224148","title":"Total
+        defect count remained the same","attributes":[{"label":"commit","value":{"label":"a0d514e","url":"https://github.com/Rigor/labs/commit/a0d514e1e6c8320d79576aa2ea8c8ecc040da701"}},{"label":"Author","value":{"label":"Test
+        User"}}],"id":"717228"},"color":"green"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Date, ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-Backoff
+      Cache-Control:
+      - no-cache="set-cookie"
+      Content-Type:
+      - text/html
+      Date:
+      - Thu, 04 Aug 2016 17:57:42 GMT
+      Location:
+      - https://api.hipchat.com/v2/room/2984707/history/8452e80a-5cf8-4a37-a061-01d1bc592f79
+      Server:
+      - nginx
+      Set-Cookie:
+      - AWSELB=F5A931F70283101795B7345DC34900751EE8E84836B8D59FF717D82C5ABD9ACED7A14BAD6E86F7A7EB66862D07B9B0E070718534541973C2310A5234FA5C2CC14D75D84000;PATH=/
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '100'
+      X-Ratelimit-Reset:
+      - '1470333763'
+      X-Xss-Protection:
+      - 1; mode=block
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 17:57:42 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://hooks.slack.com/services/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
+    body:
+      encoding: US-ASCII
+      string: payload=%7B%22username%22%3A%22Rigor+Optimization%22%2C%22attachments%22%3A%5B%7B%22title%22%3A%22Total+defect+count+remained+the+same%22%2C%22title_link%22%3A%22https%3A%2F%2Foptimization.rigor.com%2Fc%2F224148%2F224148%22%2C%22color%22%3A%22%232ECC71%22%2C%22fields%22%3A%5B%7B%22title%22%3A%22Commit%22%2C%22value%22%3A%22%5Cu003chttps%3A%2F%2Fgithub.com%2FRigor%2Flabs%2Fcommit%2Fa0d514e1e6c8320d79576aa2ea8c8ecc040da701+%7C+a0d514e%5Cu003e%22%2C%22short%22%3Atrue%7D%2C%7B%22title%22%3A%22Author%22%2C%22value%22%3A%22Test+User%22%2C%22short%22%3Atrue%7D%5D%2C%22fallback%22%3A%22Total+defect+count+remained+the+same%3A+https%3A%2F%2Foptimization.rigor.com%2Fc%2F224148%2F224148%22%7D%5D%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Thu, 04 Aug 2016 17:57:42 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Slack-Backend:
+      - z
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 326449c08c10f9b31da3d6e578388005.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 0uel4ZedO6OdBkf-jyXayQDxsftdAPzPWx4CFm2r7psi8Zk4sXT1VA==
+    body:
+      encoding: ASCII-8BIT
+      string: ok
+    http_version: 
+  recorded_at: Thu, 04 Aug 2016 17:57:42 GMT
+recorded_with: VCR 3.0.3
