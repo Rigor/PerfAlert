@@ -42,18 +42,23 @@ class OptimizationWorker
 
     comparison_url   = optimization_compare_url(old_snapshot.snapshot_id, new_snapshot.snapshot_id)
 
-    defect_count_result, result = if new_defect_count > old_defect_count
+    defect_count_result, result = make_defect_count_and_result(new_defect_count, old_defect_count)
+
+    SlackWorker.perform_async(commit_info, defect_count_result, "ColorHelper::#{result}::HEX".constantize, comparison_url)
+    HipChatWorker.perform_async(commit_info, defect_count_result, "ColorHelper::#{result}::SIMPLE".constantize, comparison_url)
+  end
+
+  private
+
+  def make_defect_count_and_result(new_defect_count, old_defect_count)
+    if new_defect_count > old_defect_count
       ["Total defect count increased from #{old_defect_count} to #{new_defect_count}", 'Failure']
     elsif new_defect_count < old_defect_count
       ["Total defect count decreased from #{old_defect_count} to #{new_defect_count}", 'Success']
     else
       ["Total defect count remained the same", 'Success']
     end
-    SlackWorker.perform_async(commit_info, defect_count_result, "ColorHelper::#{result}::HEX".constantize, comparison_url)
-    HipChatWorker.perform_async(commit_info, defect_count_result, "ColorHelper::#{result}::SIMPLE".constantize, comparison_url)
   end
-
-  private
 
   def optimization_compare_url old_snapshot, new_snapshot
     "https://optimization.rigor.com/c/#{old_snapshot}/#{new_snapshot}"
