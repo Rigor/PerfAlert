@@ -13,6 +13,14 @@
   "website": "https://github.com/Rigor/PerfAlert",
   "repository": "https://github.com/Rigor/PerfAlert",
   "env": {
+    "PERFUSER": {
+      "description": "The username to use for basic authentication",
+      "generator": "secret"
+    },
+    "PERFPASS": {
+      "description": "The password to use for basic authentication",
+      "generator": "secret"
+    },
     "OPTIMIZATION_API_KEY": {
       "description": "API key for your Rigor Optimization account",
       "value": "optimization_api_key"
@@ -24,9 +32,6 @@
     "SLACK_WEBHOOK_URL": {
       "description": "Slack webhook URL to notify when a snapshot is triggered",
       "value": "http://your.slack.webhook"
-    },
-    "SEMAPHORE_SERVER_REGEX": {
-      "description": "Optional regular expression used to match the deployed server from Semaphore"
     }
   },
   "addons": [
