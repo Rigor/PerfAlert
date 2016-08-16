@@ -1,10 +1,10 @@
 class HipChatNotifier
-  ATTRIBUTES = %I(commit_info score_result color comparison_url)
+  ATTRIBUTES = %I(commit score_result color comparison_url)
 
   attr_reader(*ATTRIBUTES)
 
   DEFAULTS = {
-    commit_info: {
+    commit: {
       'id' => 'No commit ID given',
       'url' => 'https://github.com/Rigor/PerfAlert/blob/master/README.md',
       'author_name' => 'No author given'
@@ -47,14 +47,14 @@ class HipChatNotifier
         {
           'label' => 'commit',
           'value' => {
-            'label' => commit_info['id'],
-            'url'   => commit_info['url']
+            'label' => commit['id'],
+            'url'   => commit['url']
           }
         },
         {
           'label' => 'Author',
           'value' => {
-            'label' => commit_info['author_name']
+            'label' => commit['author_name']
           }
         }
       ],

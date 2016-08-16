@@ -16,7 +16,7 @@ class ScansController < ApplicationController
 
   # POST /scans
   def create
-    @scan = Scan.new(scan_params)
+    @scan = Scan.new(scan_params).tap { |scan| scan.commit = commit_params }
 
     if @scan.save
       render json: @scan, status: :created, location: @scan
@@ -27,7 +27,7 @@ class ScansController < ApplicationController
 
   # PATCH/PUT /scans/1
   def update
-    if @scan.update(scan_params)
+    if @scan.tap { |scan| scan.commit = commit_params }.update(scan_params)
       render json: @scan
     else
       render json: @scan.errors, status: :unprocessable_entity
@@ -40,13 +40,17 @@ class ScansController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_scan
-      @scan = Scan.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_scan
+    @scan = Scan.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def scan_params
-      params.require(:scan).permit!
-    end
+  # Only allow a trusted parameter "white list" through.
+  def scan_params
+    params.require(:scan).permit(:event, :result)
+  end
+
+  def commit_params
+    params.dig(:scan, :commit).to_unsafe_h
+  end
 end
