@@ -32,6 +32,14 @@
     "SLACK_WEBHOOK_URL": {
       "description": "Slack webhook URL to notify when a snapshot is triggered",
       "value": "http://your.slack.webhook"
+    },
+    "HIPCHAT_ROOM_ID": {
+      "description": "The ID of your room in HipChat",
+      "value": "hipchat_room_id"
+    },
+    "HIPCHAT_API_KEY": {
+      "description": "Your HipChat API key",
+      "value": "hipchat_api_key"
     }
   },
   "addons": [
