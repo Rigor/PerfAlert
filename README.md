@@ -36,6 +36,10 @@ HIPCHAT_API_KEY
 ```
 * Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://PERFUSER:PERFPASS@your-app.herokuapp.com)
 
+## Development
+
+* To setup locally, copy the `.env.default` file to `.env`.  Edit appropriate ENV variables in `.env`.
+
 ## Dependencies
 
 PerfAlert runs on Ruby version `2.3.1` and Rails version `5.0.0.1`.
