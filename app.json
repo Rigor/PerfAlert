@@ -35,6 +35,7 @@
     }
   },
   "addons": [
-    "heroku-redis:hobby-dev"
+    "heroku-redis:hobby-dev",
+    "heroku-postgresql:hobby-dev"
   ]
 }
