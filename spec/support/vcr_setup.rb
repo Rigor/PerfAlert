@@ -6,4 +6,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/support/vcr'
   c.hook_into :webmock
   c.configure_rspec_metadata!
+  c.filter_sensitive_data('<HIPCHAT_AUTH>') { ENV['HIPCHAT_API_KEY'] }
+  c.filter_sensitive_data('<HIPCHAT_ROOM>') { ENV['HIPCHAT_ROOM_ID'] }
+  c.filter_sensitive_data('<SLACK_WEBHOOK_URL>') { ENV['SLACK_WEBHOOK_URL'] }
 end
