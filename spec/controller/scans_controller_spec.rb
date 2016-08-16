@@ -6,7 +6,7 @@ describe ScansController do
 
     context 'without credentials' do
       it 'does not authenticate' do
-        post '/', scan: payload
+        post '/scans', scan: payload
         expect(last_response.status).to eql(401)
       end
     end
@@ -14,7 +14,7 @@ describe ScansController do
     context 'with credentials' do
       it 'creates a new scan' do
         http_login
-        post '/', scan: payload
+        post '/scans', scan: payload
         expect(last_response.status).to eql(201)
       end
     end

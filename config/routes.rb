@@ -1,5 +1,3 @@
 Rails.application.routes.draw do
-  resources :scans, deafults: { format: :json } 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  post '/',  to: 'scans#create'
+  resources :scans, defaults: { format: :json }, except: :update
 end
