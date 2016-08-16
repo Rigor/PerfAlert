@@ -34,7 +34,7 @@ HIPCHAT_ROOM_ID
 # Your HipChat API key
 HIPCHAT_API_KEY
 ```
-* Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://PERFUSER:PERFPASS@your-app.herokuapp.com)
+* Set up your CI's post deploy webhook endpoint to the url of your app (e.g https://PERFUSER:PERFPASS@your-app.herokuapp.com/scans)
 
 ## Development
 

@@ -1,6 +1,6 @@
 class ScansController < ApplicationController
   http_basic_authenticate_with name: ENV['PERFUSER'], password: ENV['PERFPASS']
-  before_action :set_scan, only: [:show, :update, :destroy]
+  before_action :set_scan, only: [:show, :destroy]
 
   # GET /scans
   def index
@@ -20,15 +20,6 @@ class ScansController < ApplicationController
 
     if @scan.save
       render json: @scan, status: :created, location: @scan
-    else
-      render json: @scan.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /scans/1
-  def update
-    if @scan.tap { |scan| scan.commit = commit_params }.update(scan_params)
-      render json: @scan
     else
       render json: @scan.errors, status: :unprocessable_entity
     end
