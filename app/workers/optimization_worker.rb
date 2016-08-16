@@ -8,7 +8,7 @@ class OptimizationWorker
 
   OPTIMIZATION_TEST_ID = ENV['OPTIMIZATION_TEST_ID'].freeze
 
-  def perform commit_info
+  def perform commit
     client = SwaggerClient::SnapshotsApi.new(SwaggerClient::ApiClient.new)
     snapshot        = client.v2_snapshots_post(OPTIMIZATION_TEST_ID, {})
     new_snapshot_id = snapshot.snapshot_id
@@ -43,9 +43,8 @@ class OptimizationWorker
     comparison_url   = optimization_compare_url(old_snapshot.snapshot_id, new_snapshot.snapshot_id)
 
     defect_count_result, result = make_defect_count_and_result(new_defect_count, old_defect_count)
-
-    SlackWorker.perform_async(commit_info, defect_count_result, "ColorHelper::#{result}::HEX".constantize, comparison_url)
-    HipChatWorker.perform_async(commit_info, defect_count_result, "ColorHelper::#{result}::SIMPLE".constantize, comparison_url)
+    SlackWorker.perform_async(commit, defect_count_result, "ColorHelper::#{result}::HEX".constantize, comparison_url)
+    HipChatWorker.perform_async(commit, defect_count_result, "ColorHelper::#{result}::SIMPLE".constantize, comparison_url)
   end
 
   private
